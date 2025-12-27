@@ -4,7 +4,7 @@ import ThemeButton from "./ThemeButton.jsx";
 import ThemeContext from "../context/ThemeContext.js";
 import CodeContext from "../context/CodeContext.js";
 import useFindBug from "../hooks/useFindBug.js";
-import useRunCode from "../hooks/useRunCode.js";
+import useRunCode from "../hooks/useRuncode.js";
 import { downloadFile, copyToClipboard } from "../utils/index.js";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
