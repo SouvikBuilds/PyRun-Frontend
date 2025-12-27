@@ -92,7 +92,7 @@ const Navbar = () => {
         setCode("");
         setOutput("");
         setError("");
-        toast.error("Code deleted Successfully", {
+        toast.success("Code deleted Successfully", {
           position: "top-right",
           autoClose: 2000,
           hideProgressBar: false,
@@ -143,7 +143,9 @@ const Navbar = () => {
               } cursor-pointer`}
             >
               {button.icon}
-              <span className="text-white text-xs lg:text-sm">{button.text}</span>
+              <span className="text-white text-xs lg:text-sm">
+                {button.text}
+              </span>
             </button>
           ))}
         </div>
