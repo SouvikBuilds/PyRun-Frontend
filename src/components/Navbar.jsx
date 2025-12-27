@@ -108,19 +108,19 @@ const Navbar = () => {
 
   return (
     <div
-      className={`flex items-center justify-between px-10 py-6 border-b ${
+      className={`flex items-center justify-between px-4 sm:px-6 lg:px-10 py-4 lg:py-6 border-b ${
         theme === "dark"
           ? "bg-[#111827] border-[#374151]"
           : "bg-white border-[#e6e7eb]"
       }`}
     >
-      <div className="flex items-center gap-3 ubuntuFont">
+      <div className="flex items-center gap-2 sm:gap-3 ubuntuFont">
         <CodeXml
           className={theme === "dark" ? "text-blue-400" : "text-blue-600"}
-          size={30}
+          size={24}
         />
         <h1
-          className={`text-3xl font-semibold ${
+          className={`text-xl sm:text-2xl lg:text-3xl font-semibold ${
             theme === "dark" ? "text-white" : "text-black"
           }`}
         >
@@ -128,39 +128,59 @@ const Navbar = () => {
         </h1>
       </div>
 
-      <div className="flex items-center gap-4">
+      <div className="flex items-center gap-2 sm:gap-4">
         <ThemeButton />
 
-        {buttons.map((button) => (
-          <button
-            key={button.id}
-            onClick={button.onclick}
-            className={`flex items-center gap-2 px-4 py-2 rounded active:scale-95 ${
-              button.id === 1
-                ? "bg-yellow-500 active:bg-yellow-600"
-                : "bg-green-600 active:bg-green-700"
-            } cursor-pointer`}
-          >
-            {button.icon}
-            <span className="text-white text-sm">{button.text}</span>
-          </button>
-        ))}
+        <div className="hidden sm:flex items-center gap-2 lg:gap-4">
+          {buttons.map((button) => (
+            <button
+              key={button.id}
+              onClick={button.onclick}
+              className={`flex items-center gap-2 px-3 lg:px-4 py-2 rounded active:scale-95 ${
+                button.id === 1
+                  ? "bg-yellow-500 active:bg-yellow-600"
+                  : "bg-green-600 active:bg-green-700"
+              } cursor-pointer`}
+            >
+              {button.icon}
+              <span className="text-white text-xs lg:text-sm">{button.text}</span>
+            </button>
+          ))}
+        </div>
 
-        {actionButtons.map((button) => (
-          <button
-            key={button.id}
-            onClick={button.onclick}
-            className={`p-2 rounded active:scale-95 ${
-              button.id === 3
-                ? "bg-red-600 active:bg-red-700"
-                : theme === "dark"
-                ? "bg-[#374151] hover:bg-gray-600"
-                : "bg-[#f3f4f6] hover:bg-[#e2e3e4]"
-            } cursor-pointer`}
-          >
-            {button.icon}
-          </button>
-        ))}
+        <div className="sm:hidden flex items-center gap-1">
+          {buttons.map((button) => (
+            <button
+              key={button.id}
+              onClick={button.onclick}
+              className={`p-2 rounded active:scale-95 ${
+                button.id === 1
+                  ? "bg-yellow-500 active:bg-yellow-600"
+                  : "bg-green-600 active:bg-green-700"
+              } cursor-pointer`}
+            >
+              {button.icon}
+            </button>
+          ))}
+        </div>
+
+        <div className="flex items-center gap-1 sm:gap-2">
+          {actionButtons.map((button) => (
+            <button
+              key={button.id}
+              onClick={button.onclick}
+              className={`p-2 rounded active:scale-95 ${
+                button.id === 3
+                  ? "bg-red-600 active:bg-red-700"
+                  : theme === "dark"
+                  ? "bg-[#374151] hover:bg-gray-600"
+                  : "bg-[#f3f4f6] hover:bg-[#e2e3e4]"
+              } cursor-pointer`}
+            >
+              {button.icon}
+            </button>
+          ))}
+        </div>
       </div>
     </div>
   );

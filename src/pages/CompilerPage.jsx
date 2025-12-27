@@ -11,16 +11,16 @@ const CompilerPage = () => {
       <Navbar />
 
       {/* Main Content */}
-      <div className="flex flex-row items-center p-2">
+      <div className="flex flex-col lg:flex-row items-center p-2">
         <div
           className={`flex-1 flex flex-col gap-0 p-2 border rounded-t-xl ${
             theme === "dark" ? "border-[#374151]" : "border-[#e6e7eb]"
-          } w-1/2`}
+          } w-full lg:w-1/2`}
         >
           <CodeEditor />
           <InputHandler />
         </div>
-        <div className="w-1/2 h-screen">
+        <div className="w-full lg:w-1/2 h-screen">
           <Output />
         </div>
       </div>

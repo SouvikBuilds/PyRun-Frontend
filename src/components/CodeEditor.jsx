@@ -9,20 +9,20 @@ const CodeEditor = () => {
   const { code, setCode } = useContext(CodeContext);
 
   return (
-    <div className="h-[70vh] p-2">
+    <div className="h-[50vh] sm:h-[60vh] lg:h-[70vh] p-2">
       <div
-        className={`flex w-[98%] ${
+        className={`flex w-full ${
           theme === "dark"
             ? "bg-[#f2937] border-[#374151]"
             : "bg-[#f3f4f6] border-[#e6e7eb]"
         } rounded-t-xl border  border-b-0`}
       >
         <div
-          className={`flex items-center gap-2 px-4 py-2 ${
+          className={`flex items-center gap-2 px-3 sm:px-4 py-2 ${
             theme === "dark"
               ? "bg-[#1e1e1e] text-gray-200"
               : "bg-[#f3f4f6] text-black"
-          } text-sm  rounded-t-xl robotoFont`}
+          } text-xs sm:text-sm  rounded-t-xl robotoFont`}
         >
           <span className="text-blue-400">●</span>
           main.py
@@ -31,7 +31,7 @@ const CodeEditor = () => {
 
       <Editor
         height="93%"
-        width={"98%"}
+        width={"100%"}
         language="python"
         theme={`${theme === "dark" ? "vs-dark" : "vs-light"}`}
         value={code}
@@ -42,9 +42,11 @@ const CodeEditor = () => {
         }`}
         onChange={(value) => setCode(value)}
         options={{
-          fontSize: 14,
+          fontSize: 12,
           minimap: { enabled: false },
           automaticLayout: true,
+          wordWrap: "on",
+          scrollBeyondLastLine: false,
         }}
       />
     </div>

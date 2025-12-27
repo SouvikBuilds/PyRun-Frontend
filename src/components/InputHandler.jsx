@@ -8,7 +8,7 @@ const InputHandler = () => {
 
   return (
     <div
-      className={`w-[97%] h-[20vh] ${
+      className={`w-full h-[15vh] sm:h-[18vh] lg:h-[20vh] ${
         theme === "dark"
           ? "bg-[#1f2937] border-[#374151]"
           : "bg-[#fff] border-[#e6e7eb]"
@@ -18,14 +18,14 @@ const InputHandler = () => {
         htmlFor="inputBox"
         className={`${
           theme === "dark" ? "text-[#aaafb8]" : "text-black"
-        } text-xl`}
+        } text-lg sm:text-xl`}
       >
         Input
       </label>
 
       <textarea
         id="inputBox"
-        className={`w-full h-28 p-3 resize-none ${
+        className={`w-full flex-1 p-2 sm:p-3 resize-none text-sm sm:text-base ${
           theme === "dark"
             ? "text-white bg-[#374151] border-[#374151]"
             : "text-black bg-white border-[#e6e7eb]"
