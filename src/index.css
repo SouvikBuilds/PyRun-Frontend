@@ -1,0 +1,15 @@
+@import "tailwindcss";
+@import "@fontsource/roboto";
+@import "@fontsource/roboto/400.css";
+@import "@fontsource/roboto/400-italic.css";
+@import "@fontsource/ubuntu";
+@import "@fontsource/ubuntu/400.css";
+@import "@fontsource/ubuntu/400-italic.css";
+
+.robotoFont {
+  font-family: "Roboto";
+}
+
+.ubuntuFont {
+  font-family: "Ubuntu";
+}
