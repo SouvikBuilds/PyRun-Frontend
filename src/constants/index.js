@@ -1,1 +1,1 @@
-export const baseApiUrl = "https://pyrun-backend.onrender.com/api/v1/code";
+export const baseApiUrl = "https://pyrun-backend-uxop.onrender.com/api/v1/code";
